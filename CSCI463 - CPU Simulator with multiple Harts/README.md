@@ -3,7 +3,7 @@
 
 This project simulates a RISC-V disassembler and simulates the execution of RV32I instructions. This program is capable of executing real programs compiled with gcc.
 
-Usage: rv32i [-d] [-i] [-r] [-z] [-l exec-limit] [-m hex-mem-size] infile
+Usage: rv32i [-d] [-i] [-r] [-z] [-l exec-limit] [-m hex-mem-size] infile <br />
     -d show disassembly before program execution
     -i show instruction printing during execution
     -l maximum number of instructions to exec
