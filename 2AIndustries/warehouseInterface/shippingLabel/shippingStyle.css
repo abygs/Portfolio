@@ -1,0 +1,20 @@
+/*   Anushka Verma, Aby Shulgan, Vansh Rai, Addison Alvey-Blanco
+     Intro to Software Engineering
+     CSCI 467 Final - Group Project
+     11/26/2021
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*
+{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    max-width: 90%;
+    height: 80%;
+    padding-top: 40px;
+}
