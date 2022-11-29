@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+        <!-- Use jquery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jquery for sorting table -->
+        <script>
+        $(document).ready(function()
+        {
+                $('th').click(function()
+                {
+                        var table = $(this).parents('table').eq(0);
+                        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+                        this.asc = !this.asc;
+                        if(!this.asc)
+                        {
+                                rows = rows.reverse();
+                        }
+                        for(var i = 0; i < rows.length; i++)
+                        {
+                                table.append(rows[i]);
+                        }
+                });
+
+                //Sort table
+                function comparer(index)
+                {
+                        return function(a, b)
+                        {
+                                var valA = getCellValue(a, index), valB = getCellValue(b, index);
+                                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+                        }
+                }
+
+                //Gets table values
+                function getCellValue(row, index)
+                {
+                        return $(row).children('td').eq(index).text();
+                }
+        });
+	</script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <script src="https://kit.fontawesome.com/1b8a169bba.js" crossorigin="anonymous"></script>
+        <link href="adminStyle.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="../draw_table.php">
+                            <span class="logo"><img src="../2A_Industries_White_Logo.png" width = "45"></span>
+                            <span class="title"><h1>2A Industries</h1></span>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="./view_orders.php">
+                            <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                            <span class="title">Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./change_pricing.php">
+                            <span class="icon"><i class="fa fa-truck" aria-hidden="true"></i></span>
+                            <span class="title">Weight Brackets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Sign_Out_Page.php">
+                            <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                            <span class="title">Sign-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
