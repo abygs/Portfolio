@@ -1,0 +1,314 @@
+/*   Anushka Verma, Aby Shulgan, Vansh Rai, Addison Alvey-Blanco
+     Intro to Software Engineering
+     CSCI 467 Final - Group Project
+     11/26/2021
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*
+{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #101d24;
+    transition: 0.5%;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover{
+    background: white;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background: transparent;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li a:hover{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .logo{
+    position: relative;
+    margin-top: 8%;
+    margin-bottom: 6%;
+    margin-left: 15%;
+    text-align: left;
+}
+
+.navigation ul li a h1{
+    position: relative;
+    margin-top: 8%;
+    margin-left: 5%;
+    text-align: left;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.navigation ul li a h1:hover{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+
+.main.active {
+    position: absolute;
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.main .topbar {
+    width: 100%;
+    background: #ececec;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .topbar h2 {
+    margin-right: 50%;
+    font-size: 20px;
+    width: 100%;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    background: #ececec;
+    height: 60px;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: '\f0c9 ';
+    font-family: fontAwesome; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #111;
+}
+
+.cardBox {
+    position: relative;
+    width: 150%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4 1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: #eeeeee;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.cardBox .card .cardName {
+    color: #999;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.5em;
+    color: #101d24;
+}
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 1px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.details .recentOrders {
+    position: relative;
+    min-height: 530px;
+    background: #eeeeee;
+    padding: 20px;
+    display: grid;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h3 {
+    font-weight: 600;
+}
+
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    background: #101d24;
+    color: #ececec;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+.details .recentOrders table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover {
+    background: #999;
+    color: #ececec;
+}
+
+.details .recentOrders table tr td {
+    padding: 9px 5px;
+}
+
+.details .recentOrders table thead tr td:last-child,
+.details .recentOrders table tbody tr td:last-child {
+    text-align: left;
+}
+
+.details .recentOrders table thead tr td:nth-child(2),
+.details .recentOrders table tbody tr td:nth-child(2) {
+    text-align: left;
+    padding-right: 20px;
+}
+
+.details .recentOrders table thead tr td:nth-child(3),
+.details .recentOrders table tbody tr td:nth-child(3) {
+    text-align: left;
+}
+
+.status {
+    position: relative;
+    padding: 2px 4px;
+    color: black;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.packing {
+    background:#e0ce2c;
+}
+
+.shipped {
+    background: #8de02c;
+}
+
+
+/* reset user stylesheet for table*/
+tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-align: left;
+}
