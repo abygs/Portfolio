@@ -4,5 +4,4 @@ This project simulates multiple aspects of an internet company. It allows custom
 </br>
 
 [Preview the program here!](https://students.cs.niu.edu/~z1893909/csci467/2AIndustries/draw_table.php) </br>
-The username and password for the admin page is "admin" for everything. </br>
-Note: this was devleoped to work only on NIU's webserver and database. </br>
+Note: The username and password for the admin page is "admin" for everything. </br>
